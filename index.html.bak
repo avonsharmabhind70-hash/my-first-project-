@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<!-- BACKUP: full contents of index.html before restore -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Backup - index.html</title>
+</head>
+<body>
+	<p>This file contains a backup copy of the previous index.html. Keep it if you want to restore later.</p>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Gift Poster 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #1a1a1a, #000);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* ✨ Light bulbs background */
+    .lights {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .bulb {
+      position: absolute;
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Birthday Gift Poster 🎉</title>
+        <style>
+          body {
+            margin: 0;
+            background: radial-gradient(circle at top, #1a1a1a, #000);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+          }
+
+          /* ✨ Light bulbs background */
+          .lights {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+          }
+
+          .bulb {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: yellow;
+            box-shadow: 0 0 15px yellow;
+            animation: blink 1s infinite alternate;
+          }
+
+          @keyframes blink {
+            from { opacity: 0.3; transform: scale(1); }
+            to { opacity: 1; transform: scale(1.3); }
+          }
+
+          /* 🎁 Poster Card Base */
+          .poster {
+            width: 340px;
+            height: 440px;
+            perspective: 1200px;
+            cursor: pointer;
+            z-index: 2;
+          }
+
+          .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s ease-in-out;
+          }
+
+          .card.open {
+            transform: rotateY(180deg);
+          }
+
+          .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            backface-visibility: hidden;
+            overflow: hidden;
+            box-shadow: 0 0 25px rgba(255,255,255,0.25);
+          }
+
+          /* 🖼 Front poster */
+          .front {
+            background: url('https://cdn.pixabay.com/photo/2023/10/05/11/39/happy-birthday-8296232_1280.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+
+          /* 🎨 Back poster */
+          .back {
+            background: url('./WhatsApp Image 2025-10-31 at 18.17.21_2af5f3a5.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform: rotateY(180deg);
+          }
+
+          /* Small “Tap” hint */
+          .front::after {
+            content: "🎁 Tap to Reveal 🎉";
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            letter-spacing: 1px;
+          }
+
+          /* Full-image modal */
+          .img-modal {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+          }
+
+          .img-modal.show {
+            display: flex;
+            background: rgba(0,0,0,0.75);
+          }
+
+          .img-modal__inner {
+            position: relative;
+            max-width: 95%;
+            max-height: 95%;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+          }
+
+          .img-modal__inner img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #000;
+          }
+
+          .img-modal__close {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 20px;
+            line-height: 1;
+            cursor: pointer;
+            backdrop-filter: blur(4px);
+          }
+        </style>
+      </head>
+      <body>
+
+        <div class="lights"></div>
+
+        <div class="poster" onclick="openCard()">
+          <div class="card" id="card">
+            <div class="front"></div>
+            <div class="back" data-img="./WhatsApp Image 2025-10-31 at 18.17.21_2af5f3a5.jpg"></div>
+          </div>
+        </div>
+
+        <!-- Full image modal (hidden until opened) -->
+        <div class="img-modal" id="imgModal" aria-hidden="true">
+          <div class="img-modal__inner" role="dialog" aria-modal="true">
+            <button class="img-modal__close" id="imgModalClose" aria-label="Close">×</button>
+            <img id="fullImage" alt="Full poster" src="" />
+          </div>
+        </div>
+
+        <script>
+          // 🌟 Create glowing lights
+          const lightsContainer = document.querySelector('.lights');
+          for (let i = 0; i < 40; i++) {
+            const bulb = document.createElement('div');
+            bulb.classList.add('bulb');
+            bulb.style.top = Math.random() * 100 + '%';
+            bulb.style.left = Math.random() * 100 + '%';
+            bulb.style.background = ['#ff0','#0ff','#f0f','#ff6600'][Math.floor(Math.random()*4)];
+            bulb.style.boxShadow = `0 0 15px ${bulb.style.background}`;
+            bulb.style.animationDuration = (0.5 + Math.random()) + 's';
+            lightsContainer.appendChild(bulb);
+          }
+
+          // 💫 Card flip effect
+          function openCard() {
+            document.getElementById('card').classList.toggle('open');
+          }
+
+          // Open full image modal on double-click (desktop) or double-tap (touch)
+          (function() {
+            const back = document.querySelector('.back');
+            const modal = document.getElementById('imgModal');
+            const fullImage = document.getElementById('fullImage');
+            const closeBtn = document.getElementById('imgModalClose');
+
+            function openModal(src) {
+              fullImage.src = src;
+              modal.classList.add('show');
+              modal.setAttribute('aria-hidden', 'false');
+            }
+
+            function closeModal() {
+              modal.classList.remove('show');
+              modal.setAttribute('aria-hidden', 'true');
+              fullImage.src = '';
+            }
+
+            // dblclick for mouse
+            back.addEventListener('dblclick', function (e) {
+              e.stopPropagation();
+              const src = back.dataset.img || '';
+              if (src) openModal(src);
+            });
+
+            // double-tap support for touch
+            let lastTap = 0;
+            back.addEventListener('touchend', function (e) {
+              const currentTime = new Date().getTime();
+              const tapLength = currentTime - lastTap;
+              if (tapLength < 350 && tapLength > 0) {
+                e.preventDefault();
+                e.stopPropagation();
+                const src = back.dataset.img || '';
+                if (src) openModal(src);
+              }
+              lastTap = currentTime;
+            });
+
+            // close controls
+            closeBtn.addEventListener('click', function (e) {
+              e.stopPropagation();
+              closeModal();
+            });
+
+            // click outside image closes modal
+            modal.addEventListener('click', function (e) {
+              if (e.target === modal) closeModal();
+            });
+
+            // Esc key closes modal
+            document.addEventListener('keydown', function (e) {
+              if (e.key === 'Escape' && modal.classList.contains('show')) {
+                closeModal();
+              }
+            });
+          })();
+        </script>
+
+      </body>
+      </html>
+
+    @keyframes glow {
+      0% { box-shadow: 0 18px 40px rgba(0,0,0,0.55), 0 0 20px rgba(255,200,50,0.06) inset; }
+      50% { box-shadow: 0 28px 60px rgba(0,0,0,0.65), 0 0 60px rgba(255,200,50,0.18) inset; }
+      100% { box-shadow: 0 18px 40px rgba(0,0,0,0.55), 0 0 20px rgba(255,200,50,0.06) inset; }
+    }
+
+    @keyframes pop-in {
+      from { transform: translateY(8px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Hover/active micro-interaction */
+    .poster:hover .mystery-box,
+    .poster:active .mystery-box {
+      transform: translateY(-28px) scale(1.03);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lights"></div>
+
+  <div class="poster" onclick="openCard()">
+    <div class="card" id="card">
+      <div class="front">
+        <div class="poster-overlay" aria-hidden="true">
+          <div class="mystery-box" role="img" aria-label="Mystery box">
+            <span class="mark">?</span>
+          </div>
+          <div class="surprise-text">A surprise awaits — tap to reveal!</div>
+        </div>
+      </div>
+      <div class="back"></div>
+    </div>
+  </div>
+
+  <script>
+    // 🌟 Create glowing lights
+    const lightsContainer = document.querySelector('.lights');
+    for (let i = 0; i < 40; i++) {
+      const bulb = document.createElement('div');
+      bulb.classList.add('bulb');
+      bulb.style.top = Math.random() * 100 + '%';
+      bulb.style.left = Math.random() * 100 + '%';
+      bulb.style.background = ['#ff0','#0ff','#f0f','#ff6600'][Math.floor(Math.random()*4)];
+  bulb.style.boxShadow = `0 0 15px ${bulb.style.background}`;
+      bulb.style.animationDuration = (0.5 + Math.random()) + 's';
+      lightsContainer.appendChild(bulb);
+    }
+
+    // 💫 Card flip effect
+    function openCard() {
+      document.getElementById('card').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
